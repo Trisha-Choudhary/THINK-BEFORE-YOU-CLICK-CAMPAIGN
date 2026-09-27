@@ -1,0 +1,2608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Think Before You Click | Online Safety</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111827;
+    padding:15px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 8%;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    font-size:19px;
+    color:#dbeafe;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+    border:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.primary{
+    background:#38bdf8;
+    color:#082f49;
+}
+
+.primary:hover{
+    background:#7dd3fc;
+    transform:translateY(-2px);
+}
+
+.secondary{
+    border:2px solid #38bdf8;
+    color:white;
+    background:transparent;
+}
+
+.secondary:hover{
+    background:#38bdf8;
+    color:#082f49;
+}
+
+.hero-card{
+    width:320px;
+    min-width:280px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:30px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-card h3{
+    margin-bottom:15px;
+}
+
+.hero-card-item{
+    padding:12px;
+    margin:10px 0;
+    background:rgba(255,255,255,.1);
+    border-radius:10px;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#64748b;
+    max-width:700px;
+    margin:auto;
+}
+
+/* ================= THREE PILLARS ================= */
+
+.pillars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.pillar{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 25px rgba(15,23,42,.08);
+    transition:.3s;
+}
+
+.pillar:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.pillar h3{
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.pillar ul{
+    padding-left:20px;
+    margin-top:15px;
+}
+
+.pillar li{
+    margin-bottom:8px;
+}
+
+/* ================= PRIVACY ================= */
+
+.privacy-section{
+    background:#eaf6ff;
+}
+
+.privacy-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.phone{
+    max-width:320px;
+    margin:auto;
+    background:#111827;
+    padding:12px;
+    border-radius:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.phone.highlight{
+    animation:phoneHighlight 1.5s ease;
+}
+
+@keyframes phoneHighlight{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:0 15px 40px rgba(0,0,0,.2);
+    }
+    50%{
+        transform:scale(1.04);
+        box-shadow:0 0 0 8px rgba(56,189,248,.3),
+                   0 15px 50px rgba(0,0,0,.3);
+    }
+}
+
+.phone-screen{
+    background:white;
+    border-radius:25px;
+    padding:25px 18px;
+}
+
+.phone-top{
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.setting{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:13px 8px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.toggle{
+    width:42px;
+    height:23px;
+    background:#22c55e;
+    border-radius:20px;
+    position:relative;
+    cursor:pointer;
+    transition:.25s;
+    flex-shrink:0;
+}
+
+.toggle::after{
+    content:"";
+    position:absolute;
+    width:19px;
+    height:19px;
+    background:white;
+    border-radius:50%;
+    right:2px;
+    top:2px;
+    transition:.25s;
+}
+
+.toggle.off{
+    background:#ef4444;
+}
+
+.toggle.off::after{
+    right:21px;
+}
+
+.privacy-info{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(15,23,42,.07);
+}
+
+.privacy-info h3{
+    margin-bottom:15px;
+}
+
+.tip{
+    background:#f0fdf4;
+    border-left:5px solid #22c55e;
+    padding:15px;
+    margin-top:20px;
+    border-radius:5px;
+}
+
+.setting-status{
+    margin-top:20px;
+    background:#f0fdf4;
+    border-left:5px solid #22c55e;
+    padding:15px;
+    border-radius:5px;
+}
+
+.setting-status strong{
+    display:block;
+    margin-bottom:10px;
+}
+
+.status-row{
+    display:flex;
+    justify-content:space-between;
+    padding:4px 0;
+}
+
+.status-on{
+    color:#15803d;
+    font-weight:bold;
+}
+
+.status-off{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+/* ================= LINK CHALLENGE ================= */
+
+.link-section{
+    background:#fff7ed;
+}
+
+.link-demo{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 8px 30px rgba(15,23,42,.08);
+    text-align:center;
+}
+
+.link-demo h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.fake-link-box{
+    margin:25px auto;
+    padding:22px;
+    max-width:600px;
+    background:#f8fafc;
+    border:2px solid #cbd5e1;
+    border-radius:12px;
+    text-align:left;
+}
+
+.fake-link-box p{
+    margin-bottom:10px;
+}
+
+.fake-link{
+    display:block;
+    color:#2563eb;
+    text-decoration:underline;
+    font-weight:bold;
+    word-break:break-all;
+    cursor:pointer;
+    margin:10px 0;
+}
+
+.link-warning{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    background:#fef2f2;
+    border-left:6px solid #ef4444;
+    border-radius:10px;
+    text-align:left;
+}
+
+.link-warning h3{
+    color:#b91c1c;
+    margin-bottom:10px;
+}
+
+.link-warning ul{
+    padding-left:20px;
+    margin:15px 0;
+}
+
+.link-result{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    border-radius:8px;
+    text-align:left;
+}
+
+/* ================= CYBERBULLYING ================= */
+
+.cyber-section{
+    background:white;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.step{
+    text-align:center;
+    background:#f8fafc;
+    padding:25px 15px;
+    border-radius:15px;
+    border:1px solid #e2e8f0;
+}
+
+.step-number{
+    width:50px;
+    height:50px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.scenario{
+    max-width:800px;
+    margin:50px auto 0;
+    padding:30px;
+    background:#eff6ff;
+    border-radius:15px;
+    text-align:center;
+}
+
+.scenario h3{
+    margin-bottom:15px;
+}
+
+.scenario-buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.answer{
+    margin-top:20px;
+    font-weight:bold;
+    display:none;
+}
+
+/* ================= DIGITAL DETOX ================= */
+
+.detox-section{
+    background:#f1f5f9;
+}
+
+.detox-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.detox-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(15,23,42,.06);
+}
+
+.detox-card .big-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.challenge{
+    margin-top:40px;
+    background:#111827;
+    color:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+}
+
+.challenge h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+#challengeResult{
+    margin-top:20px;
+    font-size:18px;
+    color:#7dd3fc;
+    font-weight:bold;
+}
+
+/* ================= POSTERS ================= */
+
+.poster-section{
+    background:white;
+}
+
+.poster-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.poster-card{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 5px 20px rgba(15,23,42,.07);
+    text-align:center;
+}
+
+.poster-card img{
+    width:100%;
+    max-height:650px;
+    object-fit:contain;
+    border-radius:10px;
+    display:block;
+}
+
+.poster-card p{
+    margin-top:12px;
+    font-weight:bold;
+    color:#334155;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-section{
+    background:white;
+}
+
+.quiz-container{
+    max-width:850px;
+    margin:auto;
+    background:#f8fafc;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #e2e8f0;
+}
+
+.question{
+    margin-bottom:30px;
+}
+
+.question h3{
+    margin-bottom:15px;
+}
+
+.option{
+    display:block;
+    background:white;
+    padding:12px 15px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #cbd5e1;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#eff6ff;
+    border-color:#60a5fa;
+}
+
+.option input{
+    margin-right:10px;
+}
+
+#quizResult{
+    margin-top:25px;
+    padding:20px;
+    background:#e0f2fe;
+    border-radius:10px;
+    display:none;
+    text-align:center;
+    font-size:18px;
+}
+
+.quiz-feedback{
+    margin-top:20px;
+    padding:22px;
+    border-radius:12px;
+    display:none;
+}
+
+.quiz-feedback.correct{
+    background:#f0fdf4;
+    border-left:6px solid #22c55e;
+    color:#166534;
+}
+
+.quiz-feedback.wrong{
+    background:#fef2f2;
+    border-left:6px solid #ef4444;
+    color:#991b1b;
+}
+
+.quiz-feedback h3{
+    color:#172033;
+    margin-bottom:20px;
+}
+
+.feedback-item{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #e2e8f0;
+    color:#172033;
+}
+
+.feedback-item.correct{
+    border-left:5px solid #22c55e;
+}
+
+.feedback-item.wrong{
+    border-left:5px solid #ef4444;
+}
+
+.feedback-item strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+/* ================= PLEDGE ================= */
+
+.pledge-section{
+    background:linear-gradient(135deg,#1e3a8a,#0f172a);
+    color:white;
+    text-align:center;
+}
+
+.pledge-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.pledge-box h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.pledge-box p{
+    font-size:19px;
+    color:#dbeafe;
+    margin-bottom:25px;
+}
+
+.pledge-input{
+    width:100%;
+    padding:14px;
+    border-radius:8px;
+    border:none;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+#pledgeResult{
+    margin-top:20px;
+    color:#7dd3fc;
+    font-weight:bold;
+    display:none;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#020617;
+    color:#94a3b8;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav ul{
+        gap:12px;
+        justify-content:center;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:50px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .pillars,
+    .detox-grid{
+        grid-template-columns:1fr;
+    }
+
+    .privacy-grid{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .poster-gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:55px 5%;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        width:100%;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    nav ul{
+        gap:9px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        Think<span>Before</span>YouClick
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#link-check">Link Check</a></li>
+        <li><a href="#cyberbullying">Cyberbullying</a></li>
+        <li><a href="#detox">Digital Detox</a></li>
+        <li><a href="#posters">Posters</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>
+            Think Before<br>
+            <span>You Click.</span>
+        </h1>
+
+        <p>
+            A digital awareness campaign helping teenagers
+            protect their privacy, respond to cyberbullying,
+            and build healthier digital habits.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#privacy" class="btn primary">
+                Learn Online Safety
+            </a>
+
+            <a href="#quiz" class="btn secondary">
+                Take the Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <h3>🛡️ Stay Safe Online</h3>
+
+        <div class="hero-card-item">
+            🔐 Protect your privacy
+        </div>
+
+        <div class="hero-card-item">
+            🚫 Stand against cyberbullying
+        </div>
+
+        <div class="hero-card-item">
+            📵 Take digital breaks
+        </div>
+
+        <div class="hero-card-item">
+            🎯 Think before you share
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= THREE PILLARS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Our Three Pillars</h2>
+
+        <p>
+            Online safety is more than protecting an account.
+            It also includes responsible online behaviour and
+            maintaining healthy technology habits.
+        </p>
+
+    </div>
+
+
+    <div class="pillars">
+
+        <div class="pillar">
+
+            <div class="icon">🔐</div>
+
+            <h3>Privacy</h3>
+
+            <p>
+                Learn how to control your personal information
+                and make safer choices online.
+            </p>
+
+            <ul>
+                <li>Private accounts</li>
+                <li>Strong passwords</li>
+                <li>Two-factor authentication</li>
+                <li>Location privacy</li>
+            </ul>
+
+        </div>
+
+
+        <div class="pillar">
+
+            <div class="icon">🚫</div>
+
+            <h3>Cyberbullying</h3>
+
+            <p>
+                Recognize harmful online behaviour and know
+                what steps to take when it happens.
+            </p>
+
+            <ul>
+                <li>Don't participate</li>
+                <li>Block and report</li>
+                <li>Save evidence</li>
+                <li>Seek support</li>
+            </ul>
+
+        </div>
+
+
+        <div class="pillar">
+
+            <div class="icon">📵</div>
+
+            <h3>Digital Detox</h3>
+
+            <p>
+                Build healthier technology habits by making
+                time for offline activities.
+            </p>
+
+            <ul>
+                <li>Screen-time limits</li>
+                <li>Screen-free breaks</li>
+                <li>Reduce notifications</li>
+                <li>Offline activities</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRIVACY ================= -->
+
+<section class="privacy-section" id="privacy">
+
+    <div class="section-title">
+
+        <h2>🔐 Protect Your Privacy</h2>
+
+        <p>
+            Your personal information should not be shared
+            carelessly. Review your privacy settings regularly.
+        </p>
+
+    </div>
+
+
+    <div class="privacy-grid">
+
+        <div class="phone" id="privacyPhone">
+
+            <div class="phone-screen">
+
+                <div class="phone-top">
+                    ⚙️ Privacy Settings
+                </div>
+
+
+                <div class="setting">
+                    <span>Private Account</span>
+
+                    <div
+                        class="toggle"
+                        data-setting="Private Account"
+                        data-state="on"
+                        role="button"
+                        tabindex="0">
+                    </div>
+                </div>
+
+
+                <div class="setting">
+                    <span>2FA</span>
+
+                    <div
+                        class="toggle"
+                        data-setting="2FA"
+                        data-state="on"
+                        role="button"
+                        tabindex="0">
+                    </div>
+                </div>
+
+
+                <div class="setting">
+                    <span>Location Sharing</span>
+
+                    <div
+                        class="toggle off"
+                        data-setting="Location Sharing"
+                        data-state="off"
+                        role="button"
+                        tabindex="0">
+                    </div>
+                </div>
+
+
+                <div class="setting">
+                    <span>Message Requests</span>
+
+                    <div
+                        class="toggle off"
+                        data-setting="Message Requests"
+                        data-state="off"
+                        role="button"
+                        tabindex="0">
+                    </div>
+                </div>
+
+
+                <div class="setting">
+                    <span>Tag Review</span>
+
+                    <div
+                        class="toggle"
+                        data-setting="Tag Review"
+                        data-state="on"
+                        role="button"
+                        tabindex="0">
+                    </div>
+                </div>
+
+
+                <div class="setting-status">
+
+                    <strong>
+                        Current Privacy Settings
+                    </strong>
+
+                    <div id="settingsSummary"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="privacy-info">
+
+            <h3>Important Privacy Habits</h3>
+
+            <ul>
+
+                <li>
+                    <strong>Use strong passwords:</strong>
+                    Avoid using easily guessed information.
+                </li>
+
+                <li>
+                    <strong>Enable 2FA:</strong>
+                    Add an extra layer of account protection.
+                </li>
+
+                <li>
+                    <strong>Review location sharing:</strong>
+                    Only share your location when necessary.
+                </li>
+
+                <li>
+                    <strong>Protect personal information:</strong>
+                    Avoid sharing passwords, OTPs, addresses,
+                    or other sensitive details.
+                </li>
+
+                <li>
+                    <strong>Check app permissions:</strong>
+                    Review which apps can access your information.
+                </li>
+
+            </ul>
+
+
+            <div class="tip">
+
+                💡 <strong>Think before you share.</strong>
+
+                Once personal information is shared online,
+                controlling where it goes can become difficult.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAKE LINK ================= -->
+
+<section class="link-section" id="link-check">
+
+    <div class="section-title">
+
+        <h2>🔗 Think Before You Click Challenge</h2>
+
+        <p>
+            Would you click an unexpected prize link?
+            Check it before entering any personal information.
+        </p>
+
+    </div>
+
+
+    <div class="link-demo">
+
+        <h3>🎁 You Received a Prize Link!</h3>
+
+        <p>
+            Imagine you receive this link while browsing online.
+        </p>
+
+
+        <div class="fake-link-box">
+
+            <p>
+                <strong>Congratulations!</strong>
+                You have been selected for a special reward.
+            </p>
+
+            <p>
+                Click the link below to claim your prize:
+            </p>
+
+            <a
+                href="#"
+                class="fake-link"
+                onclick="checkFakeLink(event)">
+                https://claim-prize.example/winner
+            </a>
+
+            <p>
+                ⚠️ This is a safe educational simulation.
+                It does not collect real information.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn primary"
+            onclick="checkFakeLink(event)">
+            🔍 Check This Link
+        </button>
+
+
+        <div id="linkWarning" class="link-warning">
+
+            <h3>
+                ⚠️ Suspicious Link Detected!
+            </h3>
+
+            <p>
+                Before clicking an unexpected link, look for
+                warning signs:
+            </p>
+
+            <ul>
+                <li>You did not enter any contest.</li>
+                <li>The link uses an unfamiliar domain.</li>
+                <li>It may try to collect personal information.</li>
+                <li>Never enter your password or OTP.</li>
+                <li>Never provide banking details through an unknown link.</li>
+            </ul>
+
+
+            <button
+                class="btn primary"
+                onclick="checkPrivacyFromLink()">
+
+                🔐 Check My Privacy Settings
+
+            </button>
+
+        </div>
+
+
+        <div id="linkResult" class="link-result"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CYBERBULLYING ================= -->
+
+<section class="cyber-section" id="cyberbullying">
+
+    <div class="section-title">
+
+        <h2>🚫 Stop Cyberbullying</h2>
+
+        <p>
+            Cyberbullying can happen through social media,
+            messaging apps, gaming platforms, and other
+            digital spaces.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>Don't Engage</h3>
+
+            <p>
+                Avoid escalating the situation by responding
+                with more abuse.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h3>Block</h3>
+
+            <p>
+                Use platform controls to stop unwanted contact.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h3>Report</h3>
+
+            <p>
+                Report harmful behaviour through the platform.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">4</div>
+
+            <h3>Seek Help</h3>
+
+            <p>
+                Tell a trusted adult, teacher, parent,
+                or appropriate support person.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="scenario">
+
+        <h3>🎯 Safe or Unsafe?</h3>
+
+        <p>
+            Someone is repeatedly sending abusive messages
+            to your friend. You forward the messages to
+            other students for entertainment.
+        </p>
+
+
+        <div class="scenario-buttons">
+
+            <button
+                class="btn primary"
+                onclick="scenarioAnswer(false)">
+                SAFE
+            </button>
+
+            <button
+                class="btn secondary"
+                onclick="scenarioAnswer(true)">
+                UNSAFE
+            </button>
+
+        </div>
+
+
+        <div id="scenarioAnswer" class="answer"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DIGITAL DETOX ================= -->
+
+<section class="detox-section" id="detox">
+
+    <div class="section-title">
+
+        <h2>📵 Practice Digital Detox</h2>
+
+        <p>
+            Digital detox means intentionally creating
+            periods of reduced or screen-free technology use.
+        </p>
+
+    </div>
+
+
+    <div class="detox-grid">
+
+        <div class="detox-card">
+            <div class="big-icon">⏰</div>
+            <h3>Set Limits</h3>
+            <p>
+                Set realistic screen-time limits for
+                recreational use.
+            </p>
+        </div>
+
+
+        <div class="detox-card">
+            <div class="big-icon">🍽️</div>
+            <h3>Screen-Free Meals</h3>
+            <p>
+                Keep devices away during meals and
+                spend time with people around you.
+            </p>
+        </div>
+
+
+        <div class="detox-card">
+            <div class="big-icon">📚</div>
+            <h3>Focus Time</h3>
+            <p>
+                Reduce notifications and distractions
+                during study or work.
+            </p>
+        </div>
+
+
+        <div class="detox-card">
+            <div class="big-icon">😴</div>
+            <h3>Better Bedtime</h3>
+            <p>
+                Create a screen-free period before sleeping.
+            </p>
+        </div>
+
+
+        <div class="detox-card">
+            <div class="big-icon">🏃</div>
+            <h3>Move More</h3>
+            <p>
+                Replace some screen time with exercise
+                or outdoor activities.
+            </p>
+        </div>
+
+
+        <div class="detox-card">
+            <div class="big-icon">🎨</div>
+            <h3>Offline Hobbies</h3>
+            <p>
+                Make time for reading, art, music,
+                hobbies, or social activities.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="challenge">
+
+        <h3>🎯 Digital Detox Challenge</h3>
+
+        <p>
+            Click the button and get a simple
+            screen-free activity.
+        </p>
+
+        <br>
+
+        <button
+            class="btn primary"
+            onclick="generateChallenge()">
+            Give Me a Challenge
+        </button>
+
+        <div id="challengeResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= POSTERS ================= -->
+
+<section class="poster-section" id="posters">
+
+    <div class="section-title">
+
+        <h2> Online Safety Awareness Posters</h2>
+
+        <p>
+            Awareness posters created for our
+            online safety campaign.
+        </p>
+
+    </div>
+
+
+    <div class="poster-gallery">
+
+        <div class="poster-card">
+
+            <img
+                src="Detox.png"
+                alt="Online Safety Awareness Poster">
+
+            <p>
+                Control your screen. Don't let your screen control you.
+            </p>
+
+        </div>
+
+
+        <div class="poster-card">
+
+            <img
+                src="app.jpeg"
+                alt="Cyberbullying Awareness Poster">
+
+            <p>
+                Cyberbullying Awareness
+            </p>
+
+        </div>
+
+
+        <div class="poster-card">
+
+            <img
+                src="privacy.png"
+                alt="Online Safety Campaign Poster">
+
+            <p>
+                Think Before You Click
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section class="quiz-section" id="quiz">
+
+    <div class="section-title">
+
+        <h2>🎯 Online Safety Quiz</h2>
+
+        <p>
+            Test what you have learned about privacy,
+            cyberbullying, and digital habits.
+        </p>
+
+    </div>
+
+
+    <div class="quiz-container">
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question">
+
+            <h3>
+                1. Which is safer for a social-media account?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q1" value="0">
+                Sharing your account password with friends
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="1">
+                Using a strong password and 2FA
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="0">
+                Using the same password everywhere
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question">
+
+            <h3>
+                2. What should you do if you experience cyberbullying?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q2" value="0">
+                Forward the messages
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="1">
+                Block/report and seek appropriate help
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="0">
+                Start bullying the person back
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question">
+
+            <h3>
+                3. What does 2FA provide?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q3" value="1">
+                An additional layer of account security
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="0">
+                More followers
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="0">
+                Faster internet
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question">
+
+            <h3>
+                4. Which information should you protect?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q4" value="1">
+                Passwords and OTPs
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="0">
+                Public weather information
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="0">
+                General news headlines
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question">
+
+            <h3>
+                5. Which is a useful digital detox habit?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q5" value="1">
+                Taking regular screen-free breaks
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="0">
+                Checking your phone constantly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="0">
+                Increasing unnecessary notifications
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 6 -->
+
+        <div class="question">
+
+            <h3>
+                6. What should you do before sharing someone's photo?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q6" value="1">
+                Consider privacy and get appropriate permission
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="0">
+                Share it immediately
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="0">
+                Send it to everyone
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 7 -->
+
+        <div class="question">
+
+            <h3>
+                7. What should you do with suspicious messages?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q7" value="1">
+                Be cautious and avoid sharing sensitive information
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="0">
+                Immediately share your OTP
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="0">
+                Send your password
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 8 -->
+
+        <div class="question">
+
+            <h3>
+                8. Why can screen-free breaks be useful?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q8" value="1">
+                They create time for offline activities
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="0">
+                They increase notifications
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="0">
+                They make passwords stronger
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 9 -->
+
+        <div class="question">
+
+            <h3>
+                9. What is a responsible response to cyberbullying?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q9" value="1">
+                Report it and support the person affected
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="0">
+                Join in
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="0">
+                Forward it for entertainment
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 10 -->
+
+        <div class="question">
+
+            <h3>
+                10. What is the main idea of this campaign?
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q10" value="1">
+                Use technology safely and responsibly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="0">
+                Stop using technology completely
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="0">
+                Share everything online
+            </label>
+
+        </div>
+
+
+        <button
+            class="btn primary"
+            onclick="calculateQuiz()">
+            Submit Quiz
+        </button>
+
+
+        <div id="quizResult"></div>
+
+        <div id="quizFeedback" class="quiz-feedback"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PLEDGE ================= -->
+
+<section class="pledge-section">
+
+    <div class="pledge-box">
+
+        <h2>✋ Online Safety Pledge</h2>
+
+        <p>
+            “I will protect my personal information,
+            stand against cyberbullying, and use
+            technology responsibly.”
+        </p>
+
+        <input
+            type="text"
+            id="studentName"
+            class="pledge-input"
+            placeholder="Enter your name">
+
+        <br>
+
+        <button
+            class="btn primary"
+            onclick="takePledge()">
+            Take the Pledge
+        </button>
+
+        <div id="pledgeResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>Think Before You Click</strong>
+    </p>
+
+    <p>
+        Promoting Online Safety Among Teenagers
+    </p>
+
+    <p>
+        Community Engagement Project (CEP)
+    </p>
+
+    <br>
+
+    <p>
+        Designed as an educational awareness project.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PRIVACY TOGGLES
+========================================================= */
+
+const toggles = document.querySelectorAll(".toggle");
+
+toggles.forEach(toggle => {
+
+    toggle.addEventListener("click", function(){
+
+        if(this.dataset.state === "on"){
+
+            this.dataset.state = "off";
+            this.classList.add("off");
+
+        }else{
+
+            this.dataset.state = "on";
+            this.classList.remove("off");
+
+        }
+
+        updateSettingsSummary();
+
+    });
+
+
+    toggle.addEventListener("keydown", function(event){
+
+        if(event.key === "Enter" || event.key === " "){
+
+            event.preventDefault();
+            this.click();
+
+        }
+
+    });
+
+});
+
+
+function updateSettingsSummary(){
+
+    const summary =
+        document.getElementById("settingsSummary");
+
+    summary.innerHTML = "";
+
+    toggles.forEach(toggle => {
+
+        const row =
+            document.createElement("div");
+
+        row.className = "status-row";
+
+        const name =
+            toggle.dataset.setting;
+
+        const isOn =
+            toggle.dataset.state === "on";
+
+        row.innerHTML =
+            "<span>" +
+            name +
+            "</span>" +
+
+            "<span class='" +
+            (isOn ? "status-on" : "status-off") +
+            "'>" +
+
+            (isOn ? "🟢 ON" : "🔴 OFF") +
+
+            "</span>";
+
+        summary.appendChild(row);
+
+    });
+
+}
+
+updateSettingsSummary();
+
+
+/* =========================================================
+   FAKE LINK
+========================================================= */
+
+function checkFakeLink(event){
+
+    if(event){
+        event.preventDefault();
+    }
+
+    const warning =
+        document.getElementById("linkWarning");
+
+    const result =
+        document.getElementById("linkResult");
+
+    warning.style.display = "block";
+
+    result.style.display = "block";
+
+    result.innerHTML =
+        "💡 <strong>Good catch!</strong> " +
+        "Before clicking an unexpected link, check the sender, " +
+        "domain, request for personal information, and other warning signs.";
+
+    warning.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+function checkPrivacyFromLink(){
+
+    const phone =
+        document.getElementById("privacyPhone");
+
+    const privacy =
+        document.getElementById("privacy");
+
+    privacy.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+    setTimeout(function(){
+
+        phone.classList.add("highlight");
+
+        setTimeout(function(){
+
+            phone.classList.remove("highlight");
+
+        },1500);
+
+    },700);
+
+}
+
+
+/* =========================================================
+   CYBERBULLYING SCENARIO
+========================================================= */
+
+function scenarioAnswer(isUnsafe){
+
+    const answer =
+        document.getElementById("scenarioAnswer");
+
+    answer.style.display = "block";
+
+    if(isUnsafe){
+
+        answer.innerHTML =
+            "✅ Correct! Forwarding harmful content can spread the abuse. " +
+            "A safer response is to avoid participating, save evidence " +
+            "when appropriate, report the content, and seek help.";
+
+        answer.style.color = "#15803d";
+
+    }else{
+
+        answer.innerHTML =
+            "❌ Think again. Forwarding harmful messages can contribute " +
+            "to the problem. Choose UNSAFE.";
+
+        answer.style.color = "#dc2626";
+
+    }
+
+}
+
+
+/* =========================================================
+   DIGITAL DETOX CHALLENGE
+========================================================= */
+
+function generateChallenge(){
+
+    const challenges = [
+
+        "Put your phone away for 30 minutes and read something offline.",
+
+        "Take a 20-minute walk without checking your phone.",
+
+        "Have one screen-free meal today.",
+
+        "Spend 30 minutes on an offline hobby.",
+
+        "Turn off unnecessary notifications for one hour.",
+
+        "Keep your phone away while studying for 30 minutes.",
+
+        "Spend 20 minutes talking with family or friends without using your phone."
+
+    ];
+
+    const randomIndex =
+        Math.floor(Math.random() * challenges.length);
+
+    document.getElementById("challengeResult").innerHTML =
+        "🎯 Your challenge: " +
+        challenges[randomIndex];
+
+}
+
+
+/* =========================================================
+   QUIZ
+   Shows:
+   - Score
+   - Correct answer reason
+   - Why selected answer was wrong
+========================================================= */
+
+function calculateQuiz(){
+
+    let score = 0;
+
+    const totalQuestions = 10;
+
+    const feedbackBox =
+        document.getElementById("quizFeedback");
+
+    let feedbackHTML = "";
+
+
+    /* ---------------- QUESTION 1 ---------------- */
+
+    const q1 =
+        document.querySelector('input[name="q1"]:checked');
+
+    if(!q1){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 1 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q1.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 1 — ✅ Correct</strong>
+                A strong and unique password combined with
+                two-factor authentication gives your account
+                an additional layer of protection.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 1 — ❌ Why is your answer wrong?</strong>
+                Sharing passwords or reusing the same password
+                can make an account less secure. A strong,
+                unique password and 2FA are safer practices.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 2 ---------------- */
+
+    const q2 =
+        document.querySelector('input[name="q2"]:checked');
+
+    if(!q2){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 2 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q2.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 2 — ✅ Correct</strong>
+                A safer response to cyberbullying is to avoid
+                engaging, block or report the account, save
+                evidence when appropriate, and seek help.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 2 — ❌ Why is your answer wrong?</strong>
+                Forwarding harmful messages or bullying the
+                person back can spread or escalate the problem.
+                Blocking/reporting and seeking appropriate help
+                are safer responses.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 3 ---------------- */
+
+    const q3 =
+        document.querySelector('input[name="q3"]:checked');
+
+    if(!q3){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 3 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q3.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 3 — ✅ Correct</strong>
+                Two-factor authentication adds another
+                verification step to help protect an account.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 3 — ❌ Why is your answer wrong?</strong>
+                2FA does not provide more followers or faster
+                internet. Its purpose is to add another layer
+                of account security.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 4 ---------------- */
+
+    const q4 =
+        document.querySelector('input[name="q4"]:checked');
+
+    if(!q4){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 4 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q4.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 4 — ✅ Correct</strong>
+                Passwords and OTPs are sensitive information
+                and should be kept private.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 4 — ❌ Why is your answer wrong?</strong>
+                Passwords and OTPs can be used to access
+                accounts, so they should not be shared with
+                strangers or unknown services.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 5 ---------------- */
+
+    const q5 =
+        document.querySelector('input[name="q5"]:checked');
+
+    if(!q5){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 5 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q5.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 5 — ✅ Correct</strong>
+                Regular screen-free breaks create time for
+                offline activities and help reduce continuous
+                device use.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 5 — ❌ Why is your answer wrong?</strong>
+                Constantly checking your phone or increasing
+                unnecessary notifications does not support a
+                digital detox. Intentional screen-free breaks
+                are a healthier habit.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 6 ---------------- */
+
+    const q6 =
+        document.querySelector('input[name="q6"]:checked');
+
+    if(!q6){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 6 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q6.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 6 — ✅ Correct</strong>
+                Before sharing someone else's photo, consider
+                their privacy and get appropriate permission.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 6 — ❌ Why is your answer wrong?</strong>
+                Sharing someone's photo immediately can expose
+                their personal information or ignore their
+                privacy. Think before sharing.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 7 ---------------- */
+
+    const q7 =
+        document.querySelector('input[name="q7"]:checked');
+
+    if(!q7){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 7 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q7.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 7 — ✅ Correct</strong>
+                Suspicious messages should be treated carefully.
+                Do not provide passwords, OTPs or other
+                sensitive information.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 7 — ❌ Why is your answer wrong?</strong>
+                Suspicious messages may attempt to trick you
+                into revealing sensitive information. Never
+                send your password or OTP simply because
+                a message asks for it.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 8 ---------------- */
+
+    const q8 =
+        document.querySelector('input[name="q8"]:checked');
+
+    if(!q8){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 8 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q8.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 8 — ✅ Correct</strong>
+                Screen-free breaks create opportunities for
+                offline activities and reduce continuous
+                screen use.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 8 — ❌ Why is your answer wrong?</strong>
+                Screen-free breaks are intended to reduce
+                device use and create time for offline
+                activities. They do not increase notifications
+                or make passwords stronger.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 9 ---------------- */
+
+    const q9 =
+        document.querySelector('input[name="q9"]:checked');
+
+    if(!q9){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 9 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q9.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 9 — ✅ Correct</strong>
+                Reporting harmful behaviour and supporting
+                the affected person can help address
+                cyberbullying safely.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 9 — ❌ Why is your answer wrong?</strong>
+                Joining in or forwarding harmful content can
+                contribute to the problem. A responsible
+                response is to avoid participating, report
+                the behaviour and support the person.
+            </div>
+        `;
+
+    }
+
+
+    /* ---------------- QUESTION 10 ---------------- */
+
+    const q10 =
+        document.querySelector('input[name="q10"]:checked');
+
+    if(!q10){
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 10 — ⚠️ Not answered</strong>
+                Please select an answer.
+            </div>
+        `;
+
+    }else if(q10.value === "1"){
+
+        score++;
+
+        feedbackHTML += `
+            <div class="feedback-item correct">
+                <strong>Question 10 — ✅ Correct</strong>
+                The campaign focuses on using technology
+                safely, responsibly and thoughtfully.
+            </div>
+        `;
+
+    }else{
+
+        feedbackHTML += `
+            <div class="feedback-item wrong">
+                <strong>Question 10 — ❌ Why is your answer wrong?</strong>
+                The goal is not to completely stop using
+                technology or share everything online.
+                The aim is to use technology safely and
+                responsibly.
+            </div>
+        `;
+
+    }
+
+
+    /* =====================================================
+       SCORE DISPLAY
+    ===================================================== */
+
+    const result =
+        document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+
+    let message = "";
+
+
+    if(score === 10){
+
+        message =
+            "🌟 Excellent! You understand the key online safety concepts.";
+
+    }
+    else if(score >= 7){
+
+        message =
+            "👍 Good understanding! Review the questions you missed.";
+
+    }
+    else if(score >= 4){
+
+        message =
+            "📚 You have a basic understanding. Review the sections above and try again.";
+
+    }
+    else{
+
+        message =
+            "💡 Keep learning! Read the Privacy, Cyberbullying and Digital Detox sections and retake the quiz.";
+
+    }
+
+
+    result.innerHTML =
+        "<strong>Your Score: " +
+        score +
+        " / " +
+        totalQuestions +
+        "</strong><br><br>" +
+        message;
+
+
+    /* =====================================================
+       FEEDBACK DISPLAY
+    ===================================================== */
+
+    feedbackBox.style.display = "block";
+
+    feedbackBox.className =
+        "quiz-feedback " +
+        (score === totalQuestions ? "correct" : "wrong");
+
+
+    feedbackBox.innerHTML =
+        "<h3>📖 Answer Review</h3>" +
+        feedbackHTML;
+
+
+    feedbackBox.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+
+/* =========================================================
+   PLEDGE
+========================================================= */
+
+function takePledge(){
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    const result =
+        document.getElementById("pledgeResult");
+
+
+    if(name === ""){
+
+        result.style.display = "block";
+
+        result.innerHTML =
+            "Please enter your name first.";
+
+        result.style.color = "#f87171";
+
+        return;
+
+    }
+
+
+    result.style.display = "block";
+
+    result.style.color = "#7dd3fc";
+
+    result.innerHTML =
+        "✓ " +
+        name +
+        ", your online safety pledge has been recorded on this page. " +
+        "Stay safe and think before you click!";
+
+}
+
+</script>
+
+</body>
+</html>
